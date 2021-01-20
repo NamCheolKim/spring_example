@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
@@ -27,10 +28,12 @@ public class OrderGroup {
     private String paymentType;
     private BigDecimal totalPrice;
     private Integer totalQuantity;
-    private LocalDateTime orderAt;
-    private LocalDateTime arrivalDate;
+    private LocalDate orderAt;
+    private LocalDate arrivalDate;
     private LocalDateTime createdAt;
     private String createdBy;
     private LocalDateTime updatedAt;
     private String updatedBy;
+    private Long userId;
+
 }
