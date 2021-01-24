@@ -1,6 +1,7 @@
 package com.example.study.controller;
 
 import com.example.study.model.SearchParam;
+import com.example.study.model.network.Header;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,12 +23,18 @@ public class GetController {
     }
 
     @GetMapping("/getMultiParameter")
-    public String getMultiParameter(SearchParam searchParam){
+    public SearchParam getMultiParameter(SearchParam searchParam){
         System.out.println("account = " + searchParam.getAccount());
         System.out.println("email = " + searchParam.getEmail());
         System.out.println("page = " + searchParam.getPage());
 
-        return "ok";
+        return searchParam;
+    }
+
+    @GetMapping("/header")
+    public Header getHeader(){
+
+        return Header.builder().resultCode("OK").description("OK").build();
     }
 
 }
