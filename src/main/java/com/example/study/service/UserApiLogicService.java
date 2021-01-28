@@ -49,7 +49,7 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
     @Override
     public Header<UserApiResponse> update(Header<UserApiRequest> request) {
 
-        UserApiRequest userApiRequest =request.getData();
+        UserApiRequest userApiRequest = request.getData();
 
         Optional<User> optional = userRepository.findById(userApiRequest.getId());
 
