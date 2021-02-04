@@ -4,7 +4,6 @@ import com.example.study.ifs.CrudInterface;
 import com.example.study.model.network.Header;
 import com.example.study.model.network.request.AdminUserApiRequest;
 import com.example.study.model.network.response.AdminUserApiResponse;
-import com.example.study.repository.AdminUserRepository;
 import com.example.study.service.AdminUserApiLogicService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
