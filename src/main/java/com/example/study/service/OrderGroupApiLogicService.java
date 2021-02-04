@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Optional;
 
 @Service
 public class OrderGroupApiLogicService implements CrudInterface<OrderGroupApiRequest, OrderGroupApiResponse> {
@@ -60,19 +59,18 @@ public class OrderGroupApiLogicService implements CrudInterface<OrderGroupApiReq
         return orderGroupRepository.findById(orderGroupApiRequest.getId())
                 .map(orderGroup -> {
                     orderGroup
-                            .setStatus(orderGroupApiRequest.getStatus())
-                            .setOrderType(orderGroupApiRequest.getOrderType())
-                            .setRevAddress(orderGroupApiRequest.getRevAddress())
-                            .setRevName(orderGroupApiRequest.getRevName())
-                            .setPaymentType(orderGroupApiRequest.getPaymentType())
-                            .setTotalPrice(orderGroupApiRequest.getTotalPrice())
-                            .setTotalQuantity(orderGroupApiRequest.getTotalQuantity())
-                            .setOrderAt(orderGroupApiRequest.getOrderAt())
-                            .setArrivalDate(orderGroupApiRequest.getArrivalDate())
-                            .setUser(userRepository.getOne(orderGroupApiRequest.getUserId()));
+                        .setStatus(orderGroupApiRequest.getStatus())
+                        .setOrderType(orderGroupApiRequest.getOrderType())
+                        .setRevAddress(orderGroupApiRequest.getRevAddress())
+                        .setRevName(orderGroupApiRequest.getRevName())
+                        .setPaymentType(orderGroupApiRequest.getPaymentType())
+                        .setTotalPrice(orderGroupApiRequest.getTotalPrice())
+                        .setTotalQuantity(orderGroupApiRequest.getTotalQuantity())
+                        .setOrderAt(orderGroupApiRequest.getOrderAt())
+                        .setArrivalDate(orderGroupApiRequest.getArrivalDate())
+                        .setUser(userRepository.getOne(orderGroupApiRequest.getUserId()));
 
                     return orderGroup;
-
                 })
                 .map(changeOrderGroup -> orderGroupRepository.save(changeOrderGroup))
                 .map(this::response)
