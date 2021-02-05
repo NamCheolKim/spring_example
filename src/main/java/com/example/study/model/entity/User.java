@@ -1,5 +1,6 @@
 package com.example.study.model.entity;
 
+import com.example.study.model.enumclass.UserStatus;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
@@ -28,7 +29,9 @@ public class User {
     private Long id;
     private String account;
     private String password;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private UserStatus status;
     private String email;
     private String phoneNumber;
     private LocalDateTime registeredAt;
