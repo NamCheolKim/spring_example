@@ -25,7 +25,7 @@ public class AdminUserApiLogicService implements CrudInterface<AdminUserApiReque
         AdminUser adminUser = AdminUser.builder()
                 .account(adminUserApiRequest.getAccount())
                 .password(adminUserApiRequest.getPassword())
-                .status("REGISTERED")
+                .status(adminUserApiRequest.getStatus())
                 .role(adminUserApiRequest.getRole())
                 .lastLoginAt(LocalDateTime.now())
                 .registeredAt(LocalDateTime.now())
