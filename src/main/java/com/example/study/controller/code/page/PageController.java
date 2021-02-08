@@ -28,7 +28,7 @@ public class PageController {
     }
 
     @RequestMapping("/orderGroup")
-    public ModelAndView orderList() {
+    public ModelAndView orderGroup() {
         return new ModelAndView("/pages/orderGroup")
                 .addObject("menuList", adminMenuService.getAdminMenu())
                 .addObject("code", "orderGroup");
