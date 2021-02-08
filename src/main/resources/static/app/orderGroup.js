@@ -26,6 +26,13 @@
         el : '#itemList',
         data : {
             itemList : {}
+        },
+        filters:{
+            currency: function (value){
+                var num = new Number(value);
+                return value.toFixed(0).replace(/(\d)(?=(\d{3})+(?:\.\d+)?$)/g, "$1,")
+
+            }
         }
     });
 
